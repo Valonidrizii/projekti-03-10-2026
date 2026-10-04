@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML CSS JS Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar">
+        <div class="logo">CodeLab</div>
+        <ul>
+          <li><a href="#html">HTML</a></li>
+          <li><a href="#css">CSS</a></li>
+          <li><a href="#js">JavaScript</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Projekt i thjesht</p>
+          <h1>HTML + CSS + JavaScript</h1>
+          <p class="lead">
+            Një projekt edukativ me komanda dhe shembuj të zakonshëm për HTML, CSS dhe JS.
+          </p>
+          <button id="showMessageBtn">Shfaq mesazh</button>
+        </div>
+        <div class="code-preview">
+          <pre><code>&lt;h1&gt;Përshëndetje!&lt;/h1&gt;
+&lt;button onclick="hello()"&gt;Kliko&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="html" class="panel">
+        <h2>HTML - Struktura e faqes</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Teksti</h3>
+            <code>&lt;h1&gt;Titulli&lt;/h1&gt;</code>
+            <code>&lt;p&gt;Paragrafi&lt;/p&gt;</code>
+          </article>
+          <article class="card">
+            <h3>Link dhe imazhe</h3>
+            <code>&lt;a href="https://example.com"&gt;Link&lt;/a&gt;</code>
+            <code>&lt;img src="foto.jpg" alt="Përshkrim"&gt;</code>
+          </article>
+          <article class="card">
+            <h3>Lista</h3>
+            <code>&lt;ul&gt;&lt;li&gt;Elementi 1&lt;/li&gt;&lt;/ul&gt;</code>
+            <code>&lt;ol&gt;&lt;li&gt;Hapi 1&lt;/li&gt;&lt;/ol&gt;</code>
+          </article>
+          <article class="card">
+            <h3>Forma</h3>
+            <code>&lt;form&gt;...&lt;/form&gt;</code>
+            <code>&lt;input type="text"&gt;</code>
+          </article>
+        </div>
+      </section>
+
+      <section id="css" class="panel alt">
+        <h2>CSS - Stili dhe layout</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Selektor</h3>
+            <code>h1 { color: blue; }</code>
+            <code>.klasa { background: #f0f0f0; }</code>
+          </article>
+          <article class="card">
+            <h3>Box model</h3>
+            <code>margin: 20px;</code>
+            <code>padding: 12px;</code>
+            <code>border: 1px solid #333;</code>
+          </article>
+          <article class="card">
+            <h3>Display / Flex</h3>
+            <code>display: flex;</code>
+            <code>justify-content: center;</code>
+            <code>align-items: center;</code>
+          </article>
+          <article class="card">
+            <h3>Responsive</h3>
+            <code>@media (max-width: 768px) { ... }</code>
+            <code>grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));</code>
+          </article>
+        </div>
+      </section>
+
+      <section id="js" class="panel">
+        <h2>JavaScript - Logjika</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Variablat</h3>
+            <code>let emri = "Ari";</code>
+            <code>const numri = 10;</code>
+          </article>
+          <article class="card">
+            <h3>Funksionet</h3>
+            <code>function hello() { alert("Përshëndetje!"); }</code>
+            <code>const suma = (a, b) =&gt; a + b;</code>
+          </article>
+          <article class="card">
+            <h3>Kontrolli</h3>
+            <code>if (mosha &gt;= 18) { ... }</code>
+            <code>for (let i = 0; i &lt; 5; i++) { ... }</code>
+          </article>
+          <article class="card">
+            <h3>DOM</h3>
+            <code>document.getElementById("id")</code>
+            <code>element.textContent = "Tekst";</code>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel demo">
+        <h2>Demo JavaScript</h2>
+        <div class="demo-box">
+          <input id="nameInput" type="text" placeholder="Shkruaj emrin tuaj" />
+          <button id="greetBtn">Përshëndetje</button>
+          <p id="output">Teksti do të shfaqet këtu.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> CodeLab - Projekt HTML CSS JS</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
