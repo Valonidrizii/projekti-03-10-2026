@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML CSS JS Cheat Sheet</title>
+        <meta
+      name="description"
+      content="Përmbledhje edukative me shembuj të HTML-së, CSS-së dhe JavaScript-it, si dhe një demonstrim të thjeshtë ndërveprues."
+    />
+    <title>Përmbledhje HTML, CSS dhe JavaScript | CodeLab</title>
+    
+    <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -17,18 +23,27 @@
         </ul>
       </nav>
 
-      <div class="hero-content">
-        <div>
-          <p class="eyebrow">Projekt i thjesht</p>
+            <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">Projekt i thjeshtë</p>
           <h1>HTML + CSS + JavaScript</h1>
           <p class="lead">
-            Një projekt edukativ me komanda dhe shembuj të zakonshëm për HTML, CSS dhe JS.
+            Një projekt edukativ me komanda dhe shembuj të zakonshëm
+            për HTML, CSS dhe JS.
           </p>
-          <button id="showMessageBtn">Shfaq mesazh</button>
+          <button id="showMessageBtn" type="button">
+            Shfaq mesazh
+          </button>
         </div>
+
         <div class="code-preview">
           <pre><code>&lt;h1&gt;Përshëndetje!&lt;/h1&gt;
-&lt;button onclick="hello()"&gt;Kliko&lt;/button&gt;</code></pre>
+&lt;button id="helloBtn" type="button"&gt;Kliko&lt;/button&gt;
+
+const button = document.getElementById("helloBtn");
+button.addEventListener("click", () =&gt; {
+  button.textContent = "Përshëndetje!";
+});</code></pre>
         </div>
       </div>
     </header>
@@ -116,10 +131,17 @@
 
       <section class="panel demo">
         <h2>Demo JavaScript</h2>
-        <div class="demo-box">
-          <input id="nameInput" type="text" placeholder="Shkruaj emrin tuaj" />
-          <button id="greetBtn">Përshëndetje</button>
-          <p id="output">Teksti do të shfaqet këtu.</p>
+                <div class="demo-box">
+          <label for="nameInput">Emri yt:</label>
+          <input
+            id="nameInput"
+            type="text"
+            placeholder="Shkruaj emrin tënd"
+          />
+          <button id="greetBtn" type="button">Përshëndetje</button>
+          <p id="output" aria-live="polite">
+            Teksti do të shfaqet këtu.
+          </p>
         </div>
       </section>
     </main>
