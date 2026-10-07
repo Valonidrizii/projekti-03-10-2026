@@ -12,16 +12,17 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+    <body>
+    <nav class="topbar">
+      <div class="logo">CodeLab</div>
+      <ul>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#js">JavaScript</a></li>
+      </ul>
+    </nav>
+
     <header class="hero">
-      <nav class="topbar">
-        <div class="logo">CodeLab</div>
-        <ul>
-          <li><a href="#html">HTML</a></li>
-          <li><a href="#css">CSS</a></li>
-          <li><a href="#js">JavaScript</a></li>
-        </ul>
-      </nav>
 
             <div class="hero-content">
         <div class="hero-text">
@@ -31,9 +32,10 @@
             Një projekt edukativ me komanda dhe shembuj të zakonshëm
             për HTML, CSS dhe JS.
           </p>
-          <button id="showMessageBtn" type="button">
+                    <button id="showMessageBtn" type="button">
             Shfaq mesazh
           </button>
+          <p id="messageOutput" aria-live="polite"></p>
         </div>
 
         <div class="code-preview">
