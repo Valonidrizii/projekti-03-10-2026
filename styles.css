@@ -227,7 +227,7 @@ main {
   margin-bottom: 20px;
 }
 
-.cards {
+.card-grid {
   display: grid;
   grid-template-columns:
     repeat(auto-fit, minmax(min(220px, 100%), 1fr));

@@ -12,7 +12,8 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
     <link rel="stylesheet" href="styles.css" />
   </head>
-    <body>
+    <body class="cards">
+      
     <nav class="topbar">
       <div class="logo">CodeLab</div>
       <ul>
@@ -20,6 +21,7 @@
         <li><a href="#css">CSS</a></li>
         <li><a href="#js">JavaScript</a></li>
       </ul>
+      <button id="themeToggle" type="button">Ndrysho temën</button>
     </nav>
 
     <header class="hero">
@@ -53,7 +55,7 @@ button.addEventListener("click", () =&gt; {
     <main>
       <section id="html" class="panel">
         <h2>HTML - Struktura e faqes</h2>
-        <div class="cards">
+        <div class="card-grid">
           <article class="card">
             <h3>Teksti</h3>
             <code>&lt;h1&gt;Titulli&lt;/h1&gt;</code>
@@ -79,7 +81,7 @@ button.addEventListener("click", () =&gt; {
 
       <section id="css" class="panel alt">
         <h2>CSS - Stili dhe layout</h2>
-        <div class="cards">
+        <div class="card-grid">
           <article class="card">
             <h3>Selektor</h3>
             <code>h1 { color: blue; }</code>
@@ -107,7 +109,7 @@ button.addEventListener("click", () =&gt; {
 
       <section id="js" class="panel">
         <h2>JavaScript - Logjika</h2>
-        <div class="cards">
+        <div class="card-grid">
           <article class="card">
             <h3>Variablat</h3>
             <code>let emri = "Ari";</code>
@@ -133,18 +135,23 @@ button.addEventListener("click", () =&gt; {
 
       <section class="panel demo">
         <h2>Demo JavaScript</h2>
-                <div class="demo-box">
-          <label for="nameInput">Emri yt:</label>
-          <input
+          <form id="greetForm" class="demo-box">
+            <label for="nameInput">Emri yt</label>
+
+            <input
             id="nameInput"
             type="text"
-            placeholder="Shkruaj emrin tënd"
-          />
-          <button id="greetBtn" type="button">Përshëndetje</button>
-          <p id="output" aria-live="polite">
-            Teksti do të shfaqet këtu.
-          </p>
-        </div>
+            placeholder="Shkruaj emrin tend"
+            />
+
+            <button id="greetBtn" type="submit">
+              Pershendetje
+            </button>
+
+            <p id="output" aria-live="polite">
+              Teksti do te shfaqet ketu.
+            </p>
+          </form>
       </section>
     </main>
 
