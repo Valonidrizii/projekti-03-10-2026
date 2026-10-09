@@ -1,54 +1,100 @@
+<!-- Tregon se dokumenti përdor standardin HTML5. -->
 <!DOCTYPE html>
+<!-- Hap dokumentin dhe tregon se gjuha e përmbajtjes është shqip. -->
 <html lang="sq">
+  <!-- Komentet HTML shpjegojnë kodin dhe nuk shfaqen si tekst në faqe. -->
+  <!--
+    Etiketat me / mbyllin elementin përkatës; id identifikon një element, class grupon elementet për
+    stilim.
+  -->
+  <!-- Hap pjesën me të dhëna për shfletuesin; këto nuk janë përmbajtja kryesore e dukshme. -->
   <head>
+    <!-- UTF-8 lejon shfaqjen e saktë të shkronjave shqipe, si ë dhe ç. -->
     <meta charset="UTF-8" />
+    <!-- Përshtat gjerësinë e faqes me pajisjen dhe vendos zmadhimin fillestar 1. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
+    <!--
+      name="description" e emërton përshkrimin; content përmban tekstin që mund të përdorin motorët e
+      kërkimit.
+    -->
+    <meta
       name="description"
       content="Përmbledhje edukative me shembuj të HTML-së, CSS-së dhe JavaScript-it, si dhe një demonstrim të thjeshtë ndërveprues."
     />
+    <!-- Titulli që shfaqet në skedën e shfletuesit. -->
     <title>Përmbledhje HTML, CSS dhe JavaScript | CodeLab</title>
-    
+
+    <!-- Lidh ikonën SVG që shfaqet pranë titullit të skedës. -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+    <!-- Ngarkon styles.css për ngjyrat, hapësirat dhe rreshtimin e faqes. -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-    <body class="cards">
-      
+  <!-- Hap përmbajtjen e dukshme; JavaScript e gjen klasën cards për butonat e kopjimit. -->
+  <body class="cards">
+
+    <!-- Hap navigimin kryesor; topbar e lidh me stilin e shiritit ngjitës. -->
     <nav class="topbar">
+      <!-- Shfaq emrin e projektit në navigim. -->
       <div class="logo">CodeLab</div>
+      <!-- Hap një listë pa numërim për lidhjet e navigimit. -->
       <ul>
+        <!-- Një element liste me lidhje që lëviz te seksioni me id="html". -->
         <li><a href="#html">HTML</a></li>
+        <!-- Lidhje që lëviz te seksioni me id="css". -->
         <li><a href="#css">CSS</a></li>
+        <!-- Lidhje që lëviz te seksioni me id="js". -->
         <li><a href="#js">JavaScript</a></li>
       </ul>
+      <!-- Buton i zakonshëm; JavaScript përdor id="themeToggle" për të ndërruar temën. -->
       <button id="themeToggle" type="button">Ndrysho temën</button>
     </nav>
 
+    <!-- Hap hyrjen e faqes, të stiluar nga klasa hero. -->
     <header class="hero">
 
-            <div class="hero-content">
+      <!-- Mbajtësi që rreshton tekstin hyrës dhe shembullin e kodit. -->
+      <div class="hero-content">
+        <!-- Grupon titullin, përshkrimin dhe butonin e hyrjes. -->
         <div class="hero-text">
+          <!-- Paragraf i shkurtër që shfaqet mbi titullin kryesor. -->
           <p class="eyebrow">Projekt i thjeshtë</p>
+          <!-- Titulli kryesor i dokumentit. -->
           <h1>HTML + CSS + JavaScript</h1>
+          <!-- Hap paragrafin që përshkruan projektin; lead përcakton pamjen e tij. -->
           <p class="lead">
             Një projekt edukativ me komanda dhe shembuj të zakonshëm
             për HTML, CSS dhe JS.
           </p>
-                    <button id="showMessageBtn" type="button">
+          <!-- Butoni që JavaScript e gjen për të shfaqur mesazhin demonstrues. -->
+          <button id="showMessageBtn" type="button">
             Shfaq mesazh
           </button>
+          <!--
+            Paragraf bosh që mbushet nga JavaScript; aria-live lejon njoftimin e ndryshimit nga
+            lexuesit e ekranit.
+          -->
           <p id="messageOutput" aria-live="polite"></p>
         </div>
 
+        <!-- Hap kutinë e shembullit në krye të faqes. -->
         <div class="code-preview">
+          <!-- pre ruan formatimin; code shfaq shembullin që JavaScript lexon nga data.json. -->
           <pre><code id="heroSnippet"></code></pre>
         </div>
       </div>
     </header>
 
+    <!-- Hap përmbajtjen kryesore: kërkimin, kartat dhe demonstrimin. -->
     <main>
+      <!-- Krijon zonën e kërkimit; role dhe aria-label e emërtojnë për teknologjitë ndihmëse. -->
       <div class="snippet-search" role="search" aria-label="Kërko shembuj">
+        <!-- Lidh etiketën me fushën që ka id="snippetSearch". -->
         <label for="snippetSearch">Kërko shembuj</label>
+        <!--
+          Fusha e kërkimit: id e lidh me JavaScript-in; type="search" e bën fushë kërkimi; placeholder
+          shfaq udhëzimin; aria-controls tregon mbajtësin e rezultateve; aria-describedby e lidh me
+          mesazhin e gjendjes; disabled e çaktivizon derisa të ngarkohet JSON-i.
+        -->
         <input
           id="snippetSearch"
           type="search"
@@ -58,25 +104,41 @@
           disabled
         />
       </div>
+      <!-- Shfaq gjendjen e ngarkimit ose numrin e rezultateve; role="status" njofton ndryshimet. -->
       <p id="snippetStatus" role="status">Duke ngarkuar shembujt…</p>
+      <!-- Ky mesazh shfaqet kur shfletuesi e ka JavaScript-in të çaktivizuar. -->
       <noscript>Aktivizo JavaScript për të parë shembujt.</noscript>
+      <!-- Mbajtës bosh që JavaScript e mbush me karta; aria-busy tregon se ngarkimi po vazhdon. -->
       <div id="snippetSections" aria-busy="true"></div>
 
+      <!-- Hap seksionin e demonstrimit; klasat panel dhe demo e identifikojnë për stilim. -->
       <section class="panel demo">
+        <!-- Titulli i seksionit të formularit. -->
         <h2>Demo JavaScript</h2>
+          <!-- Hap formularin; JavaScript dëgjon submit për të përshëndetur pa rifreskuar faqen. -->
           <form id="greetForm" class="demo-box">
+            <!-- Lidh tekstin Emri yt me fushën nameInput. -->
             <label for="nameInput">Emri yt</label>
 
+            <!--
+
+              Fusha e emrit: id e lidh me etiketën dhe JavaScript-in; type="text" lejon tekst të
+
+              zakonshëm; placeholder shfaq udhëzimin kur fusha është bosh.
+
+            -->
             <input
             id="nameInput"
             type="text"
             placeholder="Shkruaj emrin tend"
             />
 
+            <!-- type="submit" dërgon formularin; dërgimi përpunohet nga JavaScript. -->
             <button id="greetBtn" type="submit">
               Pershendetje
             </button>
 
+            <!-- Paragrafi i përshëndetjes; aria-live njofton ndryshimet pa ndërprerje urgjente. -->
             <p id="output" aria-live="polite">
               Teksti do te shfaqet ketu.
             </p>
@@ -84,10 +146,13 @@
       </section>
     </main>
 
+    <!-- Hap fundin e faqes me vitin dhe emrin e projektit. -->
     <footer>
+      <!-- span është bosh në fillim; JavaScript vendos vitin aktual në elementin year. -->
       <p>© <span id="year"></span> CodeLab - Projekt HTML CSS JS</p>
     </footer>
 
+    <!-- Ngarkon JavaScript-in në fund, pasi elementet HTML sipër janë lexuar nga shfletuesi. -->
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,2 +1,5 @@
 
+# Git i injoron skedarët e rinj që përputhen me rregullat më poshtë.
+# .DS_Store krijohet nga macOS për cilësimet e dosjeve dhe nuk i duhet projektit.
+# Ky rregull nuk e fshin skedarin dhe nuk heq skedarë të gjurmuar më parë nga Git.
 .DS_Store

@@ -1,382 +1,435 @@
+/* Komentet CSS shkruhen mes shenjave si ky koment dhe nuk ndryshojnë pamjen. */
+/* .emri zgjedh klasën; #emri zgjedh id-në; { } kufizojnë një grup rregullash. */
+/* px është piksel CSS; % varet nga mbajtësi/konteksti; rem varet nga fonti rrënjë; vw është 1% e gjerësisë së pamjes. */
+
+/* Ndryshoret e temës së errët janë parazgjedhja; emrat me -- ripërdoren me var(...). */
 :root {
-  color-scheme: dark;
+  color-scheme: dark; /* Tregon temën që shfletuesi përdor për kontrollet e veta. */
 
-  --bg-start: #020817;
-  --nav-bg: rgba(15, 23, 42, 0.85);
-  --bg: #0f172a;
-  --panel: #111827;
-  --card: rgba(255, 255, 255, 0.03);
-  --border: rgba(148, 163, 184, 0.2);
-  --surface: rgba(17, 24, 39, 0.7);
+  --bg-start: #020817; /* Ngjyra nga ku nis sfondi gradual i faqes. */
+  --nav-bg: rgba(15, 23, 42, 0.85); /* Sfondi i navigimit; rgba përfshin edhe tejdukshmërinë. */
+  --bg: #0f172a; /* Ngjyra bazë e sfondit dhe e fushave të shkrimit. */
+  --panel: #111827; /* Ngjyra tjetër e përdorur në sfondin gradual. */
+  --card: rgba(255, 255, 255, 0.03); /* Ngjyra e sfondit të kartave. */
+  --border: rgba(148, 163, 184, 0.2); /* Ngjyra e vijave rrethuese. */
+  --surface: rgba(17, 24, 39, 0.7); /* Sfondi i seksionit alternativ dhe i formularit. */
 
-  --preview-bg: rgba(15, 23, 42, 0.7);
-  --preview-text: #dbeafe;
-  --code-bg: rgba(15, 23, 42, 0.9);
-  --code-text: #c4f1ff;
-  --input-border: #64748b;
+  --preview-bg: rgba(15, 23, 42, 0.7); /* Sfondi i kutisë së kodit në krye të faqes. */
+  --preview-text: #dbeafe; /* Ngjyra e tekstit të kodit në kutinë e sipërme. */
+  --code-bg: rgba(15, 23, 42, 0.9); /* Sfondi i shembujve të kodit brenda kartave. */
+  --code-text: #c4f1ff; /* Ngjyra e tekstit të shembujve në karta. */
+  --input-border: #64748b; /* Ngjyra e kornizës së fushave të shkrimit. */
 
-  --button-text: #0f172a;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --primary: #38bdf8;
-  --secondary: #a78bfa;
-  --accent: #34d399;
+  --button-text: #0f172a; /* Ngjyra e shkrimit mbi butonat me sfond gradual. */
+  --text: #e5e7eb; /* Ngjyra kryesore e shkrimit në faqe. */
+  --muted: #9ca3af; /* Ngjyra e tekstit shpjegues dhe e placeholder-it. */
+  --primary: #38bdf8; /* Ngjyra kryesore për theksime, logo dhe fokus. */
+  --secondary: #a78bfa; /* Ngjyra e dytë e sfondit gradual të butonave. */
+  --accent: #34d399; /* Ngjyra që thekson titujt e kartave dhe përshëndetjen. */
 
-  --hero-glow-primary: rgba(56, 189, 248, 0.18);
-  --hero-glow-secondary: rgba(167, 139, 250, 0.18);
-  --preview-shadow: rgba(0, 0, 0, 0.25);
-  --card-shadow: rgba(0, 0, 0, 0.15);
+  --hero-glow-primary: rgba(56, 189, 248, 0.18); /* Ngjyra e ndriçimit dekorativ sipër majtas. */
+  --hero-glow-secondary: rgba(167, 139, 250, 0.18); /* Ngjyra e ndriçimit dekorativ poshtë djathtas. */
+  --preview-shadow: rgba(0, 0, 0, 0.25); /* Ngjyra dhe tejdukshmëria e hijes së kutisë së sipërme. */
+  --card-shadow: rgba(0, 0, 0, 0.15); /* Ngjyra dhe tejdukshmëria e hijes së kartave. */
 }
 
+/* Kur <html> ka data-theme="light", këto vlera zëvendësojnë ngjyrat e temës së errët. */
 [data-theme="light"] {
-  color-scheme: light;
+  color-scheme: light; /* Tregon temën që shfletuesi përdor për kontrollet e veta. */
 
-  --bg-start: #ffffff;
-  --nav-bg: rgba(255, 255, 255, 0.85);
-  --bg: #f1f5f9;
-  --panel: #e2e8f0;
-  --card: #ffffff;
-  --border: #94a3b8;
-  --surface: #e2e8f0;
+  --bg-start: #ffffff; /* Ngjyra nga ku nis sfondi gradual i faqes. */
+  --nav-bg: rgba(255, 255, 255, 0.85); /* Sfondi i navigimit; rgba përfshin edhe tejdukshmërinë. */
+  --bg: #f1f5f9; /* Ngjyra bazë e sfondit dhe e fushave të shkrimit. */
+  --panel: #e2e8f0; /* Ngjyra tjetër e përdorur në sfondin gradual. */
+  --card: #ffffff; /* Ngjyra e sfondit të kartave. */
+  --border: #94a3b8; /* Ngjyra e vijave rrethuese. */
+  --surface: #e2e8f0; /* Sfondi i seksionit alternativ dhe i formularit. */
 
-  --preview-bg: #ffffff;
-  --preview-text: #1e293b;
-  --code-bg: #f1f5f9;
-  --code-text: #0f172a;
-  --input-border: #64748b;
+  --preview-bg: #ffffff; /* Sfondi i kutisë së kodit në krye të faqes. */
+  --preview-text: #1e293b; /* Ngjyra e tekstit të kodit në kutinë e sipërme. */
+  --code-bg: #f1f5f9; /* Sfondi i shembujve të kodit brenda kartave. */
+  --code-text: #0f172a; /* Ngjyra e tekstit të shembujve në karta. */
+  --input-border: #64748b; /* Ngjyra e kornizës së fushave të shkrimit. */
 
-  --button-text: #ffffff;
-  --text: #0f172a;
-  --muted: #475569;
-  --primary: #0369a1;
-  --secondary: #6d28d9;
-  --accent: #047857;
+  --button-text: #ffffff; /* Ngjyra e shkrimit mbi butonat me sfond gradual. */
+  --text: #0f172a; /* Ngjyra kryesore e shkrimit në faqe. */
+  --muted: #475569; /* Ngjyra e tekstit shpjegues dhe e placeholder-it. */
+  --primary: #0369a1; /* Ngjyra kryesore për theksime, logo dhe fokus. */
+  --secondary: #6d28d9; /* Ngjyra e dytë e sfondit gradual të butonave. */
+  --accent: #047857; /* Ngjyra që thekson titujt e kartave dhe përshëndetjen. */
 
-  --hero-glow-primary: rgba(3, 105, 161, 0.08);
-  --hero-glow-secondary: rgba(109, 40, 217, 0.08);
-  --preview-shadow: rgba(15, 23, 42, 0.12);
-  --card-shadow: rgba(15, 23, 42, 0.08);
+  --hero-glow-primary: rgba(3, 105, 161, 0.08); /* Ngjyra e ndriçimit dekorativ sipër majtas. */
+  --hero-glow-secondary: rgba(109, 40, 217, 0.08); /* Ngjyra e ndriçimit dekorativ poshtë djathtas. */
+  --preview-shadow: rgba(15, 23, 42, 0.12); /* Ngjyra dhe tejdukshmëria e hijes së kutisë së sipërme. */
+  --card-shadow: rgba(15, 23, 42, 0.08); /* Ngjyra dhe tejdukshmëria e hijes së kartave. */
 }
 
+/* * zgjedh çdo element dhe vendos rregullat bazë të përmasave dhe hapësirave. */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* Përfshin padding dhe border brenda gjerësisë/lartësisë së caktuar. */
+  margin: 0; /* Cakton hapësirën jashtë elementit; 0 e heq atë. */
+  padding: 0; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
 }
 
+/* Stilon elementin rrënjë dhe sjelljen e lëvizjes në faqe. */
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 150px;
+  scroll-behavior: smooth; /* smooth lëviz gradualisht te lidhjet brenda faqes; auto e lëviz menjëherë. */
+  scroll-padding-top: 150px; /* Lë hapësirë sipër objektivit të lëvizjes që navigimi ngjitës të mos e mbulojë. */
 }
 
+/* Stilon gjithë pjesën e dukshme të dokumentit. */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(
-    135deg,
-    var(--bg-start),
-    var(--bg) 40%,
-    var(--panel)
+  font-family: Arial, Helvetica, sans-serif; /* Zgjedh fontin e parë të disponueshëm nga kjo listë. */
+  background: linear-gradient( /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+    135deg, /* Drejtimi i gradientit është 135 gradë. */
+    var(--bg-start), /* Gradienti nis me ngjyrën bg-start. */
+    var(--bg) 40%, /* Ngjyra bg arrihet në 40% të gradientit. */
+    var(--panel) /* Gradienti mbaron me ngjyrën panel. */
   );
-  color: var(--text);
-  line-height: 1.6;
+  color: var(--text); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  line-height: 1.6; /* Cakton lartësinë e rreshtit si shumëfish të madhësisë së shkrimit. */
 }
 
+/* Stilon zonën hyrëse në krye të faqes. */
 .hero {
-  padding: 20px 8% 60px;
-  background:
-    radial-gradient(
-      circle at top left,
-      var(--hero-glow-primary),
-      transparent 32%
+  padding: 20px 8% 60px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  background: /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+    radial-gradient( /* Fillon një shtresë sfondi me kalim ngjyrash nga qendra drejt skajeve. */
+      circle at top left, /* Vendos qendrën e ndriçimit rrethor sipër majtas. */
+      var(--hero-glow-primary), /* Përdor ngjyrën e ndriçimit kryesor. */
+      transparent 32% /* Ndriçimi bëhet plotësisht i tejdukshëm në 32% të gradientit. */
     ),
-    radial-gradient(
-      circle at bottom right,
-      var(--hero-glow-secondary),
-      transparent 25%
+    radial-gradient( /* Fillon një shtresë sfondi me kalim ngjyrash nga qendra drejt skajeve. */
+      circle at bottom right, /* Vendos qendrën e ndriçimit rrethor poshtë djathtas. */
+      var(--hero-glow-secondary), /* Përdor ngjyrën e ndriçimit të dytë. */
+      transparent 25% /* Ndriçimi i dytë bëhet plotësisht i tejdukshëm në 25%. */
     );
 }
 
+/* Stilon shiritin e navigimit. */
 .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  position: sticky; /* sticky e mban navigimin të dukshëm gjatë lëvizjes brenda mbajtësit të tij. */
+  top: 0; /* 0 e fikson pragun e ngjitjes te skaji i sipërm i pamjes. */
+  z-index: 10; /* Vendos navigimin mbi elementet e zakonshme kur mbivendosen. */
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  display: flex; /* flex rreshton elementet me Flexbox; grid përdor rrjetë; block zë një rresht më vete. */
+  flex-direction: column; /* column i vendos elementet vertikalisht; row i vendos horizontalisht. */
+  align-items: center; /* Rreshton elementet në boshtin tërthor të Flexbox-it: center në mes, stretch i shtrin. */
+  justify-content: space-between; /* Shpërndan elementet në boshtin kryesor: center në mes, space-between me hapësirë ndërmjet. */
+  gap: 12px; /* Cakton distancën midis elementeve të Flexbox-it ose Grid-it. */
 
-  padding: 15px 8%;
-  background: var(--nav-bg);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  padding: 15px 8%; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  background: var(--nav-bg); /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+  border-bottom: 1px solid var(--border); /* Vizaton vijën poshtë elementit me trashësinë, stilin dhe ngjyrën e dhënë. */
+  backdrop-filter: blur(12px); /* Turbullon pamjen pas sfondit pjesërisht të tejdukshëm të navigimit. */
+  -webkit-backdrop-filter: blur(12px); /* Rregull për turbullimin e sfondit në shfletues që kërkojnë prefiksin -webkit-. */
 }
 
+/* Stilon emrin CodeLab. */
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
+  font-size: 1.5rem; /* Cakton madhësinë e shkrimit; rem lidhet me madhësinë rrënjë të fontit. */
+  font-weight: 700; /* 700 e bën shkrimin të trashë; 600 është pak më i lehtë. */
+  color: var(--primary); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
 }
 
+/* Stilon listën e lidhjeve brenda navigimit. */
 .topbar ul {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
+  display: flex; /* flex rreshton elementet me Flexbox; grid përdor rrjetë; block zë një rresht më vete. */
+  gap: 12px; /* Cakton distancën midis elementeve të Flexbox-it ose Grid-it. */
+  flex-wrap: wrap; /* Lejon kalimin në rresht të ri kur elementet nuk kanë hapësirë. */
+  justify-content: center; /* Shpërndan elementet në boshtin kryesor: center në mes, space-between me hapësirë ndërmjet. */
+  list-style: none; /* none heq shenjat e listës së navigimit. */
 }
 
+/* Stilon lidhjet e navigimit. */
 .topbar a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
+  color: var(--text); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  text-decoration: none; /* none heq nënvizimin e lidhjeve. */
+  font-weight: 600; /* 700 e bën shkrimin të trashë; 600 është pak më i lehtë. */
 }
 
+/* Rreshton tekstin hyrës dhe kutinë e kodit. */
 .hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: flex; /* flex rreshton elementet me Flexbox; grid përdor rrjetë; block zë një rresht më vete. */
+  justify-content: space-between; /* Shpërndan elementet në boshtin kryesor: center në mes, space-between me hapësirë ndërmjet. */
+  align-items: center; /* Rreshton elementet në boshtin tërthor të Flexbox-it: center në mes, stretch i shtrin. */
+  gap: 30px; /* Cakton distancën midis elementeve të Flexbox-it ose Grid-it. */
+  flex-wrap: wrap; /* Lejon kalimin në rresht të ri kur elementet nuk kanë hapësirë. */
 }
 
+/* Përcakton si zgjerohet dhe ngushtohet blloku i tekstit hyrës. */
 .hero-text {
   /* Zgjerim: 1, ngushtim: 1, madhësi bazë: 350px. */
-  flex: 1 1 350px;
-  min-width: 0;
+  flex: 1 1 350px; /* Mund të zgjerohet dhe ngushtohet; madhësia fillestare është 350px. */
+  min-width: 0; /* 0 lejon ngushtimin e elementit pa e shtyrë faqen jashtë ekranit. */
 }
 
+/* Stilon tekstin e vogël mbi titullin kryesor. */
 .eyebrow {
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.72rem;
-  margin-bottom: 12px;
+  color: var(--primary); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  text-transform: uppercase; /* uppercase e shfaq tekstin me shkronja të mëdha pa ndryshuar HTML-në. */
+  letter-spacing: 0.1em; /* Cakton hapësirën shtesë ndërmjet shkronjave; em lidhet me fontin e elementit. */
+  font-size: 0.72rem; /* Cakton madhësinë e shkrimit; rem lidhet me madhësinë rrënjë të fontit. */
+  margin-bottom: 12px; /* Lë hapësirë jashtë elementit nga ana e poshtme. */
 }
 
+/* Stilon titullin kryesor brenda hyrjes. */
 .hero-text h1 {
-  font-size: clamp(2.3rem, 4vw, 4.5rem);
-  margin-bottom: 15px;
+  font-size: clamp(2.3rem, 4vw, 4.5rem); /* clamp() përshtat titullin me ekranin: minimumi 2.3rem, vlera e synuar 4vw, maksimumi 4.5rem. */
+  margin-bottom: 15px; /* Lë hapësirë jashtë elementit nga ana e poshtme. */
 }
 
+/* Stilon paragrafin përshkrues të hyrjes. */
 .lead {
-  color: var(--muted);
-  max-width: 600px;
-  margin-bottom: 18px;
+  color: var(--muted); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  max-width: 600px; /* Kufizon gjerësinë maksimale që teksti të mbetet i lexueshëm. */
+  margin-bottom: 18px; /* Lë hapësirë jashtë elementit nga ana e poshtme. */
 }
 
+/* Presja bashkon përzgjedhësit: këto rregulla vlejnë për butonat e hyrjes dhe formularit. */
 .hero-text button,
 .demo-box button {
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
+  background: linear-gradient( /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+    135deg, /* Drejtimi i gradientit është 135 gradë. */
+    var(--primary), /* Gradienti i butonit nis me ngjyrën primary. */
+    var(--secondary) /* Gradienti i butonit mbaron me ngjyrën secondary. */
   );
-  color: var(--button-text);
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 700;
-  transition: transform 0.2s ease;
+  color: var(--button-text); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  border: none; /* Cakton kornizën; none e heq, ndërsa 1px solid var(...) krijon vijë të plotë. */
+  padding: 12px 20px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  border-radius: 10px; /* Rrumbullakos qoshet e elementit. */
+  cursor: pointer; /* pointer shfaq kursorin e dorës kur kalon mbi elementin e klikueshëm. */
+  font-size: 1rem; /* Cakton madhësinë e shkrimit; rem lidhet me madhësinë rrënjë të fontit. */
+  font-weight: 700; /* 700 e bën shkrimin të trashë; 600 është pak më i lehtë. */
+  transition: transform 0.2s ease; /* Cakton kalimin gradual të transformimit; none e çaktivizon. */
 }
 
+/* :hover zbatohet kur kursori qëndron mbi buton. */
 .hero-text button:hover,
 .demo-box button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* translateY(-2px) e ngre elementin 2px; none e heq transformimin. */
 }
 
+/* :focus-visible thekson elementet gjatë navigimit me tastierë. */
 .topbar a:focus-visible,
 .hero-text button:focus-visible,
 .demo-box button:focus-visible,
 .demo-box input:focus-visible {
-  outline: 3px solid var(--primary);
-  outline-offset: 4px;
+  outline: 3px solid var(--primary); /* Vizaton një vijë të dukshme rreth elementit kur ai ka fokus. */
+  outline-offset: 4px; /* Lë largësi midis vijës së fokusit dhe elementit. */
 }
 
+/* Stilon kutinë e shembullit të kodit në krye të faqes. */
 .code-preview {
-  flex: 1 1 420px;
-  min-width: 0;
-  background: var(--preview-bg);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: 0 20px 40px var(--preview-shadow);
+  flex: 1 1 420px; /* Shkurtesë: sa zgjerohet, sa ngushtohet dhe madhësia fillestare e elementit. */
+  min-width: 0; /* 0 lejon ngushtimin e elementit pa e shtyrë faqen jashtë ekranit. */
+  background: var(--preview-bg); /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+  border: 1px solid var(--border); /* Cakton kornizën; none e heq, ndërsa 1px solid var(...) krijon vijë të plotë. */
+  border-radius: 18px; /* Rrumbullakos qoshet e elementit. */
+  padding: 20px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  box-shadow: 0 20px 40px var(--preview-shadow); /* Cakton zhvendosjen horizontale, vertikale, turbullimin dhe ngjyrën e hijes. */
 }
 
+/* Stilon mbajtësin e etiketës dhe fushës së kërkimit. */
 .snippet-search {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 12px;
+  display: flex; /* flex rreshton elementet me Flexbox; grid përdor rrjetë; block zë një rresht më vete. */
+  flex-direction: column; /* column i vendos elementet vertikalisht; row i vendos horizontalisht. */
+  gap: 8px; /* Cakton distancën midis elementeve të Flexbox-it ose Grid-it. */
+  margin-bottom: 12px; /* Lë hapësirë jashtë elementit nga ana e poshtme. */
 }
 
+/* Stilon emërtimin e fushës së kërkimit. */
 .snippet-search label {
-  font-weight: 700;
+  font-weight: 700; /* 700 e bën shkrimin të trashë; 600 është pak më i lehtë. */
 }
 
+/* Stilon fushën ku shkruhet kërkimi. */
 .snippet-search input {
-  width: 100%;
-  min-width: 0;
-  padding: 12px 14px;
-  border: 1px solid var(--input-border);
-  border-radius: 10px;
-  background: var(--bg);
-  color: var(--text);
-  font: inherit;
+  width: 100%; /* 100% e bën elementin sa gjerësia e hapësirës së mbajtësit. */
+  min-width: 0; /* 0 lejon ngushtimin e elementit pa e shtyrë faqen jashtë ekranit. */
+  padding: 12px 14px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  border: 1px solid var(--input-border); /* Cakton kornizën; none e heq, ndërsa 1px solid var(...) krijon vijë të plotë. */
+  border-radius: 10px; /* Rrumbullakos qoshet e elementit. */
+  background: var(--bg); /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+  color: var(--text); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  font: inherit; /* inherit merr cilësimet e shkrimit nga elementi prind. */
 }
 
+/* ::placeholder zgjedh tekstin ndihmës që duket kur fusha është bosh. */
 .snippet-search input::placeholder {
-  color: var(--muted);
-  opacity: 1;
+  color: var(--muted); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  opacity: 1; /* 1 e shfaq plotësisht elementin pa tejdukshmëri shtesë. */
 }
 
+/* Shfaq vijën e fokusit në fushën e kërkimit gjatë përdorimit të tastierës. */
 .snippet-search input:focus-visible {
-  outline: 3px solid var(--primary);
-  outline-offset: 4px;
+  outline: 3px solid var(--primary); /* Vizaton një vijë të dukshme rreth elementit kur ai ka fokus. */
+  outline-offset: 4px; /* Lë largësi midis vijës së fokusit dhe elementit. */
 }
 
+/* # zgjedh elementin sipas id-së; këtu është mesazhi i ngarkimit ose rezultateve. */
 #snippetStatus {
-  margin-bottom: 24px;
-  color: var(--muted);
+  margin-bottom: 24px; /* Lë hapësirë jashtë elementit nga ana e poshtme. */
+  color: var(--muted); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
 }
 
+/* Stilon <pre>-në që ruan formatimin e kodit të sipërm. */
 .code-preview pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  color: var(--preview-text);
-  font-size: 1rem;
+  white-space: pre-wrap; /* pre-wrap ruan hapësirat dhe rreshtat e kodit, por lejon edhe mbështjelljen. */
+  overflow-wrap: anywhere; /* anywhere lejon thyerjen e tekstit të gjatë që të mos dalë jashtë kutisë. */
+  color: var(--preview-text); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  font-size: 1rem; /* Cakton madhësinë e shkrimit; rem lidhet me madhësinë rrënjë të fontit. */
 }
 
+/* Stilon mbajtësin e përmbajtjes kryesore. */
 main {
-  padding: 20px 8% 80px;
+  padding: 20px 8% 80px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
 }
 
+/* Vendos hapësirën ndërmjet seksioneve. */
 .panel {
-  margin-bottom: 38px;
+  margin-bottom: 38px; /* Lë hapësirë jashtë elementit nga ana e poshtme. */
 }
 
+/* Stilon titujt e seksioneve. */
 .panel h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2rem; /* Cakton madhësinë e shkrimit; rem lidhet me madhësinë rrënjë të fontit. */
+  margin-bottom: 20px; /* Lë hapësirë jashtë elementit nga ana e poshtme. */
 }
 
+/* Rreshton kartat në kolona që përshtaten me gjerësinë e ekranit. */
 .card-grid {
-  display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-  gap: 20px;
+  display: grid; /* flex rreshton elementet me Flexbox; grid përdor rrjetë; block zë një rresht më vete. */
+  grid-template-columns: /* Përcakton kolonat e rrjetës; shprehja në rreshtin vijues i përshtat me hapësirën. */
+    repeat(auto-fit, minmax(min(220px, 100%), 1fr)); /* auto-fit përshtat kolonat; minimumi është 220px ose 100% në ekrane më të ngushta; 1fr ndan hapësirën e lirë. */
+  gap: 20px; /* Cakton distancën midis elementeve të Flexbox-it ose Grid-it. */
 }
 
+/* Stilon një kartë të vetme. */
 .card {
-  min-width: 0;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 10px 30px var(--card-shadow);
+  min-width: 0; /* 0 lejon ngushtimin e elementit pa e shtyrë faqen jashtë ekranit. */
+  background: var(--card); /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+  border: 1px solid var(--border); /* Cakton kornizën; none e heq, ndërsa 1px solid var(...) krijon vijë të plotë. */
+  border-radius: 14px; /* Rrumbullakos qoshet e elementit. */
+  padding: 20px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  box-shadow: 0 10px 30px var(--card-shadow); /* Cakton zhvendosjen horizontale, vertikale, turbullimin dhe ngjyrën e hijes. */
 }
 
+/* Stilon titullin e kartës. */
 .card h3 {
-  margin-bottom: 12px;
-  color: var(--accent);
+  margin-bottom: 12px; /* Lë hapësirë jashtë elementit nga ana e poshtme. */
+  color: var(--accent); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
 }
 
+/* Stilon shembujt e kodit brenda kartave. */
 .card code {
-  display: block;
-  background: var(--code-bg);
-  color: var(--code-text);
-  padding: 10px 12px;
-  border-radius: 8px;
-  margin: 8px 0;
-  font-size: 0.9rem;
-  overflow-x: auto;
+  display: block; /* flex rreshton elementet me Flexbox; grid përdor rrjetë; block zë një rresht më vete. */
+  background: var(--code-bg); /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+  color: var(--code-text); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  padding: 10px 12px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  border-radius: 8px; /* Rrumbullakos qoshet e elementit. */
+  margin: 8px 0; /* Cakton hapësirën jashtë elementit; 0 e heq atë. */
+  font-size: 0.9rem; /* Cakton madhësinë e shkrimit; rem lidhet me madhësinë rrënjë të fontit. */
+  overflow-x: auto; /* auto shton lëvizje horizontale brenda kodit vetëm kur ka nevojë. */
 }
 
+/* Vendos pamjen alternative për seksionet që kanë klasën alt. */
 .alt {
-  background: var(--surface);
-  border-radius: 18px;
-  padding: 26px 20px;
+  background: var(--surface); /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+  border-radius: 18px; /* Rrumbullakos qoshet e elementit. */
+  padding: 26px 20px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
 }
 
+/* Stilon formularin e përshëndetjes. */
 .demo-box {
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-  align-items: stretch;
-  flex-wrap: wrap;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 22px;
+  display: flex; /* flex rreshton elementet me Flexbox; grid përdor rrjetë; block zë një rresht më vete. */
+  gap: 12px; /* Cakton distancën midis elementeve të Flexbox-it ose Grid-it. */
+  flex-direction: column; /* column i vendos elementet vertikalisht; row i vendos horizontalisht. */
+  align-items: stretch; /* Rreshton elementet në boshtin tërthor të Flexbox-it: center në mes, stretch i shtrin. */
+  flex-wrap: wrap; /* Lejon kalimin në rresht të ri kur elementet nuk kanë hapësirë. */
+  background: var(--surface); /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+  border: 1px solid var(--border); /* Cakton kornizën; none e heq, ndërsa 1px solid var(...) krijon vijë të plotë. */
+  border-radius: 14px; /* Rrumbullakos qoshet e elementit. */
+  padding: 22px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
 }
 
+/* Stilon fushën e emrit brenda formularit. */
 .demo-box input {
-  flex: 1 1 auto;
-  min-width: 0;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--input-border);
-  background: var(--bg);
-  color: var(--text);
-  font: inherit;
+  flex: 1 1 auto; /* Shkurtesë: sa zgjerohet, sa ngushtohet dhe madhësia fillestare e elementit. */
+  min-width: 0; /* 0 lejon ngushtimin e elementit pa e shtyrë faqen jashtë ekranit. */
+  padding: 12px 14px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  border-radius: 10px; /* Rrumbullakos qoshet e elementit. */
+  border: 1px solid var(--input-border); /* Cakton kornizën; none e heq, ndërsa 1px solid var(...) krijon vijë të plotë. */
+  background: var(--bg); /* Cakton sfondin; var(...) lexon një ndryshore CSS të përcaktuar sipër. */
+  color: var(--text); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  font: inherit; /* inherit merr cilësimet e shkrimit nga elementi prind. */
 }
 
+/* Stilon tekstin ndihmës të fushës së emrit. */
 .demo-box input::placeholder {
-  color: var(--muted);
-  opacity: 1;
+  color: var(--muted); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  opacity: 1; /* 1 e shfaq plotësisht elementin pa tejdukshmëri shtesë. */
 }
 
+/* Stilon paragrafin e rezultatit të përshëndetjes. */
 #output {
-  width: 100%;
-  margin-top: 14px;
-  color: var(--accent);
-  font-weight: 700;
+  width: 100%; /* 100% e bën elementin sa gjerësia e hapësirës së mbajtësit. */
+  margin-top: 14px; /* Lë hapësirë jashtë elementit nga ana e sipërme. */
+  color: var(--accent); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
+  font-weight: 700; /* 700 e bën shkrimin të trashë; 600 është pak më i lehtë. */
 }
 
+/* Stilon fundin e faqes. */
 footer {
-  padding: 20px 8% 40px;
-  text-align: center;
-  color: var(--muted);
+  padding: 20px 8% 40px; /* Cakton hapësirën e brendshme: 1 vlerë për të gjitha anët; 2 për vertikalen/horizontalen; 3 për sipër, anash, poshtë. */
+  text-align: center; /* center e rreshton tekstin në mes. */
+  color: var(--muted); /* Cakton ngjyrën e tekstit me vlerën ose ndryshoren përkatëse. */
 }
 
+/* Këto rregulla vlejnë kur ekrani është të paktën 769px i gjerë. */
 @media (min-width: 769px) {
+  /* Stilon elementin rrënjë dhe sjelljen e lëvizjes në faqe. */
   html {
-    scroll-padding-top: 90px;
+    scroll-padding-top: 90px; /* Lë hapësirë sipër objektivit të lëvizjes që navigimi ngjitës të mos e mbulojë. */
   }
 
+  /* Stilon shiritin e navigimit. */
   .topbar {
-    flex-direction: row;
+    flex-direction: row; /* column i vendos elementet vertikalisht; row i vendos horizontalisht. */
   }
 
+  /* Stilon listën e lidhjeve brenda navigimit. */
   .topbar ul {
-    gap: 20px;
+    gap: 20px; /* Cakton distancën midis elementeve të Flexbox-it ose Grid-it. */
   }
 
+  /* Stilon formularin e përshëndetjes. */
   .demo-box {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: row; /* column i vendos elementet vertikalisht; row i vendos horizontalisht. */
+    align-items: center; /* Rreshton elementet në boshtin tërthor të Flexbox-it: center në mes, stretch i shtrin. */
   }
 
+  /* Stilon fushën e emrit brenda formularit. */
   .demo-box input {
-    flex: 1 1 220px;
+    flex: 1 1 220px; /* Shkurtesë: sa zgjerohet, sa ngushtohet dhe madhësia fillestare e elementit. */
   }
 }
+/* Respekton preferencën e përdoruesit për më pak lëvizje dhe animacione. */
 @media (prefers-reduced-motion: reduce) {
+  /* Stilon elementin rrënjë dhe sjelljen e lëvizjes në faqe. */
   html {
-    scroll-behavior: auto;
+    scroll-behavior: auto; /* smooth lëviz gradualisht te lidhjet brenda faqes; auto e lëviz menjëherë. */
   }
 
+  /* Presja bashkon përzgjedhësit: këto rregulla vlejnë për butonat e hyrjes dhe formularit. */
   .hero-text button,
   .demo-box button {
-    transition: none;
+    transition: none; /* Cakton kalimin gradual të transformimit; none e çaktivizon. */
   }
 
+  /* :hover zbatohet kur kursori qëndron mbi buton. */
   .hero-text button:hover,
   .demo-box button:hover {
-    transform: none;
+    transform: none; /* translateY(-2px) e ngre elementin 2px; none e heq transformimin. */
   }
 }
