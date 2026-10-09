@@ -1,0 +1,109 @@
+{
+  "preview": "<h1>Përshëndetje!</h1>\n<button id=\"helloBtn\" type=\"button\">Kliko</button>\n\nconst button = document.getElementById(\"helloBtn\");\nbutton.addEventListener(\"click\", () => {\n  button.textContent = \"Përshëndetje!\";\n});",
+  "sections": [
+    {
+      "id": "html",
+      "title": "HTML - Struktura e faqes",
+      "cards": [
+        {
+          "title": "Teksti",
+          "snippets": [
+            "<h1>Titulli</h1>",
+            "<p>Paragrafi</p>"
+          ]
+        },
+        {
+          "title": "Link dhe imazhe",
+          "snippets": [
+            "<a href=\"https://example.com\">Link</a>",
+            "<img src=\"foto.jpg\" alt=\"Përshkrim\">"
+          ]
+        },
+        {
+          "title": "Lista",
+          "snippets": [
+            "<ul><li>Elementi 1</li></ul>",
+            "<ol><li>Hapi 1</li></ol>"
+          ]
+        },
+        {
+          "title": "Forma",
+          "snippets": [
+            "<form>...</form>",
+            "<input type=\"text\">"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "title": "CSS - Stili dhe layout",
+      "cards": [
+        {
+          "title": "Selektor",
+          "snippets": [
+            "h1 { color: blue; }",
+            ".klasa { background: #f0f0f0; }"
+          ]
+        },
+        {
+          "title": "Box model",
+          "snippets": [
+            "margin: 20px;",
+            "padding: 12px;",
+            "border: 1px solid #333;"
+          ]
+        },
+        {
+          "title": "Display / Flex",
+          "snippets": [
+            "display: flex;",
+            "justify-content: center;",
+            "align-items: center;"
+          ]
+        },
+        {
+          "title": "Responsive",
+          "snippets": [
+            "@media (max-width: 768px) { ... }",
+            "grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js",
+      "title": "JavaScript - Logjika",
+      "cards": [
+        {
+          "title": "Variablat",
+          "snippets": [
+            "let emri = \"Ari\";",
+            "const numri = 10;"
+          ]
+        },
+        {
+          "title": "Funksionet",
+          "snippets": [
+            "function hello() { alert(\"Përshëndetje!\"); }",
+            "const suma = (a, b) => a + b;"
+          ]
+        },
+        {
+          "title": "Kontrolli",
+          "snippets": [
+            "if (mosha >= 18) { ... }",
+            "for (let i = 0; i < 5; i++) { ... }"
+          ]
+        },
+        {
+          "title": "DOM",
+          "snippets": [
+            "document.getElementById(\"id\")",
+            "element.textContent = \"Tekst\";"
+          ]
+        }
+      ]
+    }
+  ]
+}

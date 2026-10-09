@@ -41,97 +41,15 @@
         </div>
 
         <div class="code-preview">
-          <pre><code>&lt;h1&gt;Përshëndetje!&lt;/h1&gt;
-&lt;button id="helloBtn" type="button"&gt;Kliko&lt;/button&gt;
-
-const button = document.getElementById("helloBtn");
-button.addEventListener("click", () =&gt; {
-  button.textContent = "Përshëndetje!";
-});</code></pre>
+          <pre><code id="heroSnippet"></code></pre>
         </div>
       </div>
     </header>
 
     <main>
-      <section id="html" class="panel">
-        <h2>HTML - Struktura e faqes</h2>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Teksti</h3>
-            <code>&lt;h1&gt;Titulli&lt;/h1&gt;</code>
-            <code>&lt;p&gt;Paragrafi&lt;/p&gt;</code>
-          </article>
-          <article class="card">
-            <h3>Link dhe imazhe</h3>
-            <code>&lt;a href="https://example.com"&gt;Link&lt;/a&gt;</code>
-            <code>&lt;img src="foto.jpg" alt="Përshkrim"&gt;</code>
-          </article>
-          <article class="card">
-            <h3>Lista</h3>
-            <code>&lt;ul&gt;&lt;li&gt;Elementi 1&lt;/li&gt;&lt;/ul&gt;</code>
-            <code>&lt;ol&gt;&lt;li&gt;Hapi 1&lt;/li&gt;&lt;/ol&gt;</code>
-          </article>
-          <article class="card">
-            <h3>Forma</h3>
-            <code>&lt;form&gt;...&lt;/form&gt;</code>
-            <code>&lt;input type="text"&gt;</code>
-          </article>
-        </div>
-      </section>
-
-      <section id="css" class="panel alt">
-        <h2>CSS - Stili dhe layout</h2>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Selektor</h3>
-            <code>h1 { color: blue; }</code>
-            <code>.klasa { background: #f0f0f0; }</code>
-          </article>
-          <article class="card">
-            <h3>Box model</h3>
-            <code>margin: 20px;</code>
-            <code>padding: 12px;</code>
-            <code>border: 1px solid #333;</code>
-          </article>
-          <article class="card">
-            <h3>Display / Flex</h3>
-            <code>display: flex;</code>
-            <code>justify-content: center;</code>
-            <code>align-items: center;</code>
-          </article>
-          <article class="card">
-            <h3>Responsive</h3>
-            <code>@media (max-width: 768px) { ... }</code>
-            <code>grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));</code>
-          </article>
-        </div>
-      </section>
-
-      <section id="js" class="panel">
-        <h2>JavaScript - Logjika</h2>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Variablat</h3>
-            <code>let emri = "Ari";</code>
-            <code>const numri = 10;</code>
-          </article>
-          <article class="card">
-            <h3>Funksionet</h3>
-            <code>function hello() { alert("Përshëndetje!"); }</code>
-            <code>const suma = (a, b) =&gt; a + b;</code>
-          </article>
-          <article class="card">
-            <h3>Kontrolli</h3>
-            <code>if (mosha &gt;= 18) { ... }</code>
-            <code>for (let i = 0; i &lt; 5; i++) { ... }</code>
-          </article>
-          <article class="card">
-            <h3>DOM</h3>
-            <code>document.getElementById("id")</code>
-            <code>element.textContent = "Tekst";</code>
-          </article>
-        </div>
-      </section>
+      <p id="snippetStatus" role="status">Duke ngarkuar shembujt…</p>
+      <noscript>Aktivizo JavaScript për të parë shembujt.</noscript>
+      <div id="snippetSections" aria-busy="true"></div>
 
       <section class="panel demo">
         <h2>Demo JavaScript</h2>

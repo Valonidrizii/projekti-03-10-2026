@@ -59,13 +59,74 @@ function setupThemeToggle() {
   });
 }
 
+function renderSections(sections) {
+  const container = document.getElementById('snippetSections');
+
+  const panels = sections.map((section, sectionIndex) => {
+    const panel = document.createElement('section');
+    panel.id = section.id;
+    panel.className = sectionIndex % 2 === 1 ? 'panel alt' : 'panel';
+
+    const heading = document.createElement('h2');
+    heading.textContent = section.title;
+
+    const grid = document.createElement('div');
+    grid.className = 'card-grid';
+    grid.append(...section.cards.map((card, cardIndex) => {
+      const article = document.createElement('article');
+      article.className = 'card';
+
+      const title = document.createElement('h3');
+      title.textContent = card.title;
+      article.append(title, ...card.snippets.map((snippet, snippetIndex) => {
+        const code = document.createElement('code');
+        code.id = `snippet-${section.id}-${cardIndex}-${snippetIndex}`;
+        code.textContent = snippet;
+        return code;
+      }));
+
+      return article;
+    }));
+
+    panel.append(heading, grid);
+    return panel;
+  });
+
+  container.replaceChildren(...panels);
+  addCopyButtons();
+}
+
+async function loadSnippets() {
+  const status = document.getElementById('snippetStatus');
+  const container = document.getElementById('snippetSections');
+
+  try {
+    const response = await fetch('./data.json');
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    document.getElementById('heroSnippet').textContent = data.preview;
+    renderSections(data.sections);
+    status.textContent = '';
+  } catch (error) {
+    status.textContent =
+      'Shembujt nuk u ngarkuan. Hape faqen me server lokal dhe provo përsëri.';
+    console.error('Ngarkimi dështoi:', error);
+  } finally {
+    container.setAttribute('aria-busy', 'false');
+  }
+}
+
 function addCopyButtons() {
   const cards = document.querySelector('.cards');
 
   if (!cards) return;
 
-  cards.querySelectorAll('code').forEach((code, index) => {
-    code.id = `snippet-${index}`;
+  cards.querySelectorAll('code').forEach((code) => {
+    const block = code.closest('pre') || code;
+    if (block.nextElementSibling?.matches('button[data-copy]')) return;
 
     const button = document.createElement('button');
     button.type = 'button';
@@ -74,7 +135,6 @@ function addCopyButtons() {
     button.dataset.copy = code.id;
     button.setAttribute('aria-live', 'polite');
 
-    const block = code.closest('pre') || code;
     block.after(button);
   });
 }
@@ -119,8 +179,8 @@ function init() {
   setupMessageButton();
   setupGreeting();
   setupThemeToggle();
-  addCopyButtons();
   setupCopyButtons();
+  loadSnippets();
 }
 
 init();
