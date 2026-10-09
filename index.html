@@ -47,6 +47,17 @@
     </header>
 
     <main>
+      <div class="snippet-search" role="search" aria-label="Kërko shembuj">
+        <label for="snippetSearch">Kërko shembuj</label>
+        <input
+          id="snippetSearch"
+          type="search"
+          placeholder="Kërko titull, kod, HTML, CSS ose JavaScript…"
+          aria-controls="snippetSections"
+          aria-describedby="snippetStatus"
+          disabled
+        />
+      </div>
       <p id="snippetStatus" role="status">Duke ngarkuar shembujt…</p>
       <noscript>Aktivizo JavaScript për të parë shembujt.</noscript>
       <div id="snippetSections" aria-busy="true"></div>

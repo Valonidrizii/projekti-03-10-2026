@@ -207,6 +207,43 @@ body {
   box-shadow: 0 20px 40px var(--preview-shadow);
 }
 
+.snippet-search {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.snippet-search label {
+  font-weight: 700;
+}
+
+.snippet-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.snippet-search input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.snippet-search input:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
+#snippetStatus {
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
 .code-preview pre {
   white-space: pre-wrap;
   overflow-wrap: anywhere;

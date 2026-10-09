@@ -66,6 +66,7 @@ function renderSections(sections) {
     const panel = document.createElement('section');
     panel.id = section.id;
     panel.className = sectionIndex % 2 === 1 ? 'panel alt' : 'panel';
+    panel.hidden = section.cards.length === 0;
 
     const heading = document.createElement('h2');
     heading.textContent = section.title;
@@ -108,8 +109,7 @@ async function loadSnippets() {
 
     const data = await response.json();
     document.getElementById('heroSnippet').textContent = data.preview;
-    renderSections(data.sections);
-    status.textContent = '';
+    setupSearch(data.sections);
   } catch (error) {
     status.textContent =
       'Shembujt nuk u ngarkuan. Hape faqen me server lokal dhe provo përsëri.';
@@ -117,6 +117,33 @@ async function loadSnippets() {
   } finally {
     container.setAttribute('aria-busy', 'false');
   }
+}
+
+function setupSearch(sections) {
+  const input = document.getElementById('snippetSearch');
+  const status = document.getElementById('snippetStatus');
+  const total = sections.reduce((count, section) => count + section.cards.length, 0);
+
+  function updateResults() {
+    const query = input.value.trim().toLocaleLowerCase('sq');
+    const filteredSections = sections.map((section) => ({
+      ...section,
+      cards: section.cards.filter((card) => {
+        const text = [section.title, card.title, ...card.snippets].join(' ');
+        return text.toLocaleLowerCase('sq').includes(query);
+      }),
+    }));
+    const count = filteredSections.reduce((sum, section) => sum + section.cards.length, 0);
+
+    renderSections(filteredSections);
+    status.textContent = count === 0
+      ? 'Nuk u gjet asnjë shembull. Provo një fjalë tjetër.'
+      : `Shfaqen ${count} nga ${total} karta.`;
+  }
+
+  input.disabled = false;
+  input.addEventListener('input', updateResults);
+  updateResults();
 }
 
 function addCopyButtons() {
